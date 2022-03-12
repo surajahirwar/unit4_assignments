@@ -1,0 +1,203 @@
+> db.movies.find({movie_name:{$eq:"Invictus"}},{movie_name:1,production_year:1})
+{ "_id" : ObjectId("6227838a76308ddba9f62362"), "movie_name" : "Invictus", "production_year" : 2019 }
+
+> db.movies.find({movie_name:{$ne:"Invictus"}},{movie_name:1,production_year:1})
+
+{ "_id" : ObjectId("6227838a76308ddba9f62356"), "movie_name" : "Cruel Story of Youth (Seishun zankoku monogatari)", "production_year"
+ : 2003 }
+{ "_id" : ObjectId("6227838a76308ddba9f62357"), "movie_name" : "Horns", "production_year" : 1993 }
+{ "_id" : ObjectId("6227838a76308ddba9f62358"), "movie_name" : "Intruder in the Dust", "production_year" : 1990 }
+{ "_id" : ObjectId("6227838a76308ddba9f62359"), "movie_name" : "Cirque du Soleil: Dralion", "production_year" : 2019 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235a"), "movie_name" : "Last Kiss, The", "production_year" : 2015 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235b"), "movie_name" : "Thunder Bay", "production_year" : 2017 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235c"), "movie_name" : "Caprice", "production_year" : 1990 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235d"), "movie_name" : "Beginning of the End", "production_year" : 2017 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235e"), "movie_name" : "Star Wars: Episode VI - Return of the Jedi", "production_year" : 1998
+ }
+
+> db.movies.find({budget:{$gte:15000}},{movie_name:1,production_year:1})
+{ "_id" : ObjectId("6227838a76308ddba9f62359"), "movie_name" : "Cirque du Soleil: Dralion", "production_year" : 2019 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235b"), "movie_name" : "Thunder Bay", "production_year" : 2017 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235e"), "movie_name" : "Star Wars: Episode VI - Return of the Jedi", "production_year" : 1998
+ }
+{ "_id" : ObjectId("6227838a76308ddba9f6235f"), "movie_name" : "White Frog", "production_year" : 1999 }
+{ "_id" : ObjectId("6227838a76308ddba9f62360"), "movie_name" : "Mystery Men", "production_year" : 1999 }
+{ "_id" : ObjectId("6227838a76308ddba9f62361"), "movie_name" : "Garçu, Le", "production_year" : 1994 }
+
+> db.movies.find({budget:{$lte:11000}},{movie_name:1,production_year:1})
+{ "_id" : ObjectId("6227838a76308ddba9f62356"), "movie_name" : "Cruel Story of Youth (Seishun zankoku monogatari)", "production_year"
+ : 2003 }
+{ "_id" : ObjectId("6227838a76308ddba9f62365"), "movie_name" : "Cotton Club, The", "production_year" : 2010 }
+{ "_id" : ObjectId("6227838a76308ddba9f6236a"), "movie_name" : "Help Me, Eros (Bang bang wo ai shen)", "production_year" : 2002 }
+{ "_id" : ObjectId("6227838a76308ddba9f62371"), "movie_name" : "Poor White Trash", "production_year" : 1990 }
+{ "_id" : ObjectId("6227838a76308ddba9f62373"), "movie_name" : "Chorus, The (Choristes, Les)", "production_year" : 2003 }
+{ "_id" : ObjectId("6227838a76308ddba9f62378"), "movie_name" : "All About the Benjamins", "production_year" : 2005 }
+{ "_id" : ObjectId("6227838a76308ddba9f6237c"), "movie_name" : "Barnacle Bill", "production_year" : 1990 }
+
+{ "_id" : ObjectId("6227838a76308ddba9f62380"), "movie_name" : "Once Upon a Crime...", "production_year" : 1997 }
+{ "_id" : ObjectId("6227838a76308ddba9f62381"), "movie_name" : "Go for It", "production_year" : 2018 }
+{ "_id" : ObjectId("6227838a76308ddba9f62383"), "movie_name" : "Happiest Girl in the World, The (Cea mai fericita fata din lume)", "p
+roduction_year" : 2000 }
+{ "_id" : ObjectId("6227838a76308ddba9f62386"), "movie_name" : "Corridors of Time: The Visitors II, The (Couloirs du temps: Les visit
+eurs 2, Les)", "production_year" : 2009 }
+{ "_id" : ObjectId("6227838a76308ddba9f62388"), "movie_name" : "Taxi Hunter (Di shi pan guan)", "production_year" : 2002 }
+{ "_id" : ObjectId("6227838a76308ddba9f62391"), "movie_name" : "Legends of Oz: Dorothy's Return", "production_year" : 2012 }
+{ "_id" : ObjectId("6227838a76308ddba9f62394"), "movie_name" : "Abominable Snowman, The (Abominable Snowman of the Himalayas, The)",
+"production_year" : 2000 }
+
+> db.movies.find({$and:[{"production_year":{$gt:2000}},{"budget":{$gt:10000}}]},{movie_name:1,production_year:1})
+{ "_id" : ObjectId("6227838a76308ddba9f62356"), "movie_name" : "Cruel Story of Youth (Seishun zankoku monogatari)", "production_year"
+ : 2003 }
+{ "_id" : ObjectId("6227838a76308ddba9f62359"), "movie_name" : "Cirque du Soleil: Dralion", "production_year" : 2019 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235a"), "movie_name" : "Last Kiss, The", "production_year" : 2015 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235b"), "movie_name" : "Thunder Bay", "production_year" : 2017 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235d"), "movie_name" : "Beginning of the End", "production_year" : 2017 }
+{ "_id" : ObjectId("6227838a76308ddba9f62362"), "movie_name" : "Invictus", "production_year" : 2019 }
+{ "_id" : ObjectId("6227838a76308ddba9f62364"), "movie_name" : "Inadequate People (Neadekvatnye lyudi)", "production_year" : 2014 }
+
+{ "_id" : ObjectId("6227838a76308ddba9f62367"), "movie_name" : "In the Time of the Butterflies", "production_year" : 2015 }
+{ "_id" : ObjectId("6227838a76308ddba9f62369"), "movie_name" : "Tourist, The", "production_year" : 2003 }
+{ "_id" : ObjectId("6227838a76308ddba9f6236c"), "movie_name" : "Fletch", "production_year" : 2018 }
+{ "_id" : ObjectId("6227838a76308ddba9f6236d"), "movie_name" : "Babylon", "production_year" : 2014 }
+{ "_id" : ObjectId("6227838a76308ddba9f6236f"), "movie_name" : "Householder, The (Gharbar)", "production_year" : 2014 }
+{ "_id" : ObjectId("6227838a76308ddba9f62372"), "movie_name" : "Operation Mad Ball", "production_year" : 2008 }
+{ "_id" : ObjectId("6227838a76308ddba9f62373"), "movie_name" : "Chorus, The (Choristes, Les)", "production_year" : 2003 }
+{ "_id" : ObjectId("6227838a76308ddba9f62374"), "movie_name" : "Ready to Rumble", "production_year" : 2013 }
+{ "_id" : ObjectId("6227838a76308ddba9f62375"), "movie_name" : "George Lopez: America's Mexican", "production_year" : 2002 }
+{ "_id" : ObjectId("6227838a76308ddba9f62377"), "movie_name" : "Star!", "production_year" : 2015 }
+{ "_id" : ObjectId("6227838a76308ddba9f62378"), "movie_name" : "All About the Benjamins", "production_year" : 2005 }
+{ "_id" : ObjectId("6227838a76308ddba9f6237b"), "movie_name" : "Bis zum Ellenbogen", "production_year" : 2006 }
+{ "_id" : ObjectId("6227838a76308ddba9f6237d"), "movie_name" : "NeverEnding Story, The", "production_year" : 2006 }
+Type "it" for more
+
+> db.movies.find({$or:[{production_year:{$gt:2000}},{budget:{$gt:10000}}]},{movie_name:1,production_year:1})db.movies.find({$or:[{production_year:{$gt:2000}},{budget:{$gt:10000}}]},{movie_name:1,production_year:1})
+
+> db.movies.find({$nor:[{production_year:{$gt:2000}},{budget:{$gt:10000}}]},{movie_name:1,production_year:1})
+
+{ "_id" : ObjectId("6227838a76308ddba9f62371"), "movie_name" : "Poor White Trash", "production_year" : 1990 }
+{ "_id" : ObjectId("6227838a76308ddba9f6237c"), "movie_name" : "Barnacle Bill", "production_year" : 1990 }
+{ "_id" : ObjectId("6227838a76308ddba9f62383"), "movie_name" : "Happiest Girl in the World, The (Cea mai fericita fata din lume)", "production_year" : 200
+
+0 }
+{ "_id" : ObjectId("6227838a76308ddba9f623b3"), "movie_name" : "Ambush (Mai fu)", "production_year" : 1990 }
+{ "_id" : ObjectId("6227838a76308ddba9f623b9"), "movie_name" : "The Loft", "production_year" : 1996 }
+{ "_id" : ObjectId("6227838a76308ddba9f623d8"), "movie_name" : "The Visitor", "production_year" : 1996 }
+{ "_id" : ObjectId("6227838a76308ddba9f6245f"), "movie_name" : "Laurence Anyways", "production_year" : 2000 }
+{ "_id" : ObjectId("6227838a76308ddba9f6248d"), "movie_name" : "Elektra", "production_year" : 1994 }
+{ "_id" : ObjectId("6227838a76308ddba9f624a9"), "movie_name" : "IMAX: Coral Reef Adventure", "production_year" : 1994 }
+{ "_id" : ObjectId("6227838a76308ddba9f624e0"), "movie_name" : "Home of Our Own, A", "production_year" : 1994 }
+{ "_id" : ObjectId("6227838a76308ddba9f624fc"), "movie_name" : "Drive Thru", "production_year" : 1995 }
+{ "_id" : ObjectId("6227838a76308ddba9f62504"), "movie_name" : "The Prisoner", "production_year" : 1990 }
+{ "_id" : ObjectId("6227838a76308ddba9f6251c"), "movie_name" : "Friend Among Strangers, Stranger Among Friends (Svoy sredi chuzhikh, chuzhoy sredi svoikh)
+", "production_year" : 1990 }
+{ "_id" : ObjectId("6227838a76308ddba9f6252f"), "movie_name" : "Queen of Blood", "production_year" : 1992 }
+{ "_id" : ObjectId("6227838a76308ddba9f62534"), "movie_name" : "Black Hawk Down", "production_year" : 1992 }
+
+
+> db.movies.find({$or:[{production_year:{$ne:2000}},{budget:{$ne:10000}}]},{movie_name:1,production_year:1})
+{ "_id" : ObjectId("6227838a76308ddba9f62356"), "movie_name" : "Cruel Story of Youth (Seishun zankoku monogatari)", "production_year" : 2003 }
+{ "_id" : ObjectId("6227838a76308ddba9f62357"), "movie_name" : "Horns", "production_year" : 1993 }
+{ "_id" : ObjectId("6227838a76308ddba9f62358"), "movie_name" : "Intruder in the Dust", "production_year" : 1990 }
+{ "_id" : ObjectId("6227838a76308ddba9f62359"), "movie_name" : "Cirque du Soleil: Dralion", "production_year" : 2019 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235a"), "movie_name" : "Last Kiss, The", "production_year" : 2015 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235b"), "movie_name" : "Thunder Bay", "production_year" : 2017 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235c"), "movie_name" : "Caprice", "production_year" : 1990 }
+
+{ "_id" : ObjectId("6227838a76308ddba9f6235d"), "movie_name" : "Beginning of the End", "production_year" : 2017 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235e"), "movie_name" : "Star Wars: Episode VI - Return of the Jedi", "production_year" : 1998 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235f"), "movie_name" : "White Frog", "production_year" : 1999 }
+{ "_id" : ObjectId("6227838a76308ddba9f62360"), "movie_name" : "Mystery Men", "production_year" : 1999 }
+{ "_id" : ObjectId("6227838a76308ddba9f62361"), "movie_name" : "Garçu, Le", "production_year" : 1994 }
+{ "_id" : ObjectId("6227838a76308ddba9f62362"), "movie_name" : "Invictus", "production_year" : 2019 }
+{ "_id" : ObjectId("6227838a76308ddba9f62363"), "movie_name" : "Monster", "production_year" : 1990 }
+{ "_id" : ObjectId("6227838a76308ddba9f62364"), "movie_name" : "Inadequate People (Neadekvatnye lyudi)", "production_year" : 2014 }
+{ "_id" : ObjectId("6227838a76308ddba9f62365"), "movie_name" : "Cotton Club, The", "production_year" : 2010 }
+{ "_id" : ObjectId("6227838a76308ddba9f62366"), "movie_name" : "Stories of Lost Souls", "production_year" : 1999 }
+{ "_id" : ObjectId("6227838a76308ddba9f62367"), "movie_name" : "In the Time of the Butterflies", "production_year" : 2015 }
+{ "_id" : ObjectId("6227838a76308ddba9f62368"), "movie_name" : "I, Madman", "production_year" : 1995 }
+{ "_id" : ObjectId("6227838a76308ddba9f62369"), "movie_name" : "Tourist, The", "production_year" : 2003 }
+Type "it" for more
+
+> db.movies.find({$and:[{production_year:{$gt:2000}},{production_year:{$lt:2010}}]},{movie_name:1,production_year:1})
+{ "_id" : ObjectId("6227838a76308ddba9f62356"), "movie_name" : "Cruel Story of Youth (Seishun zankoku monogatari)", "production_year" : 2003 }
+{ "_id" : ObjectId("6227838a76308ddba9f62369"), "movie_name" : "Tourist, The", "production_year" : 2003 }
+{ "_id" : ObjectId("6227838a76308ddba9f6236a"), "movie_name" : "Help Me, Eros (Bang bang wo ai shen)", "production_year" : 2002 }
+{ "_id" : ObjectId("6227838a76308ddba9f62372"), "movie_name" : "Operation Mad Ball", "production_year" : 2008 }
+{ "_id" : ObjectId("6227838a76308ddba9f62373"), "movie_name" : "Chorus, The (Choristes, Les)", "production_year" : 2003 }
+{ "_id" : ObjectId("6227838a76308ddba9f62375"), "movie_name" : "George Lopez: America's Mexican", "production_year" : 2002 }
+{ "_id" : ObjectId("6227838a76308ddba9f62378"), "movie_name" : "All About the Benjamins", "production_year" : 2005 }
+{ "_id" : ObjectId("6227838a76308ddba9f6237b"), "movie_name" : "Bis zum Ellenbogen", "production_year" : 2006 }
+
+{ "_id" : ObjectId("6227838a76308ddba9f6237d"), "movie_name" : "NeverEnding Story, The", "production_year" : 2006 }
+{ "_id" : ObjectId("6227838a76308ddba9f62382"), "movie_name" : "I Love Your Work", "production_year" : 2002 }
+{ "_id" : ObjectId("6227838a76308ddba9f62384"), "movie_name" : "Escape to Witch Mountain", "production_year" : 2007 }
+{ "_id" : ObjectId("6227838a76308ddba9f62386"), "movie_name" : "Corridors of Time: The Visitors II, The (Couloirs du temps: Les visiteurs 2, Les)", "produ
+ction_year" : 2009 }
+{ "_id" : ObjectId("6227838a76308ddba9f62388"), "movie_name" : "Taxi Hunter (Di shi pan guan)", "production_year" : 2002 }
+{ "_id" : ObjectId("6227838a76308ddba9f6238a"), "movie_name" : "It Happened One Night", "production_year" : 2002 }
+{ "_id" : ObjectId("6227838a76308ddba9f62390"), "movie_name" : "Futurama: Bender's Game", "production_year" : 2002 }
+{ "_id" : ObjectId("6227838a76308ddba9f62393"), "movie_name" : "Sugar Hill", "production_year" : 2008 }
+{ "_id" : ObjectId("6227838a76308ddba9f623a0"), "movie_name" : "Maiden's Cheek (To xylo vgike apo ton Paradeiso)", "production_year" : 2006 }
+{ "_id" : ObjectId("6227838a76308ddba9f623a4"), "movie_name" : "Hang 'Em High", "production_year" : 2006 }
+{ "_id" : ObjectId("6227838a76308ddba9f623a7"), "movie_name" : "Unknown Known, The", "production_year" : 2001 }
+{ "_id" : ObjectId("6227838a76308ddba9f623aa"), "movie_name" : "Frankie and Johnny", "production_year" : 2009 }
+Type "it" for more
+
+> db.movies.find({}).sort({production_year:-1,movies_name:1})
+{ "_id" : ObjectId("6227838a76308ddba9f6237e"), "id" : 41, "movie_name" : "Howling V: The Rebirth", "movie_genre" : "Horror", "production_year" : 2020, "b
+udget" : 18270 }
+{ "_id" : ObjectId("6227838a76308ddba9f62385"), "id" : 48, "movie_name" : "Bill Bailey: Tinselworm", "movie_genre" : "Comedy|Documentary", "production_yea
+r" : 2020, "budget" : 18963 }
+
+{ "_id" : ObjectId("6227838a76308ddba9f62398"), "id" : 67, "movie_name" : "Bad Country", "movie_genre" : "Action|Crime|Drama|Thriller", "production_year"
+: 2020, "budget" : 9314 }
+{ "_id" : ObjectId("6227838a76308ddba9f623eb"), "id" : 150, "movie_name" : "The Violent Kind", "movie_genre" : "Horror", "production_year" : 2020, "budget
+" : 10641 }
+{ "_id" : ObjectId("6227838a76308ddba9f62433"), "id" : 222, "movie_name" : "Artists and Models", "movie_genre" : "Comedy|Musical", "production_year" : 202
+0, "budget" : 16723 }
+{ "_id" : ObjectId("6227838a76308ddba9f62435"), "id" : 224, "movie_name" : "The Well", "movie_genre" : "Drama|Film-Noir|Thriller", "production_year" : 202
+0, "budget" : 14396 }
+{ "_id" : ObjectId("6227838a76308ddba9f62458"), "id" : 259, "movie_name" : "WolfCop", "movie_genre" : "Comedy|Horror", "production_year" : 2020, "budget"
+: 18944 }
+{ "_id" : ObjectId("6227838a76308ddba9f62473"), "id" : 286, "movie_name" : "Broken Blossoms or The Yellow Man and the Girl", "movie_genre" : "Drama|Romanc
+e", "production_year" : 2020, "budget" : 19614 }
+{ "_id" : ObjectId("6227838a76308ddba9f6248b"), "id" : 310, "movie_name" : "Oxygen", "movie_genre" : "Crime|Drama|Thriller", "production_year" : 2020, "bu
+dget" : 16011 }
+
+
+> db.movies.find({}).skip(10).limit(5)
+{ "_id" : ObjectId("6227838a76308ddba9f62360"), "id" : 11, "movie_name" : "Mystery Men", "movie_genre" : "Action|Comedy|Fantasy", "production_year" : 1999
+, "budget" : 16819 }
+{ "_id" : ObjectId("6227838a76308ddba9f62361"), "id" : 12, "movie_name" : "Garçu, Le", "movie_genre" : "Drama", "production_year" : 1994, "budget" : 17156
+ }
+{ "_id" : ObjectId("6227838a76308ddba9f62362"), "id" : 13, "movie_name" : "Invictus", "movie_genre" : "Drama", "production_year" : 2019, "budget" : 12881
+}
+{ "_id" : ObjectId("6227838a76308ddba9f62363"), "id" : 14, "movie_name" : "Monster", "movie_genre" : "Action|Horror|Sci-Fi", "production_year" : 1990, "bu
+dget" : 16083 }
+{ "_id" : ObjectId("6227838a76308ddba9f62364"), "id" : 15, "movie_name" : "Inadequate People (Neadekvatnye lyudi)", "movie_genre" : "Comedy|Romance", "pro
+duction_year" : 2014, "budget" : 16315 }
+
+db.movies.updateMany({$and:[{movie_genre:{$exists:true}},{id:{$lte:10}}]},{$unset:{movie_genre:""}})
+{ "acknowledged" : true, "matchedCount" : 10, "modifiedCount" : 10 }
+
+db.movies.find({id:{$lte:10}})
+{ "_id" : ObjectId("6227838a76308ddba9f62356"), "id" : 1, "movie_name" : "Cruel Story of Youth (Seishun zankoku monogatari)", "production_year" : 2003, "b
+udget" : 10976 }
+{ "_id" : ObjectId("6227838a76308ddba9f62357"), "id" : 2, "movie_name" : "Horns", "production_year" : 1993, "budget" : 12989 }
+{ "_id" : ObjectId("6227838a76308ddba9f62358"), "id" : 3, "movie_name" : "Intruder in the Dust", "production_year" : 1990, "budget" : 12755 }
+{ "_id" : ObjectId("6227838a76308ddba9f62359"), "id" : 4, "movie_name" : "Cirque du Soleil: Dralion", "production_year" : 2019, "budget" : 19704 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235a"), "id" : 5, "movie_name" : "Last Kiss, The", "production_year" : 2015, "budget" : 14319 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235b"), "id" : 6, "movie_name" : "Thunder Bay", "production_year" : 2017, "budget" : 15096 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235c"), "id" : 7, "movie_name" : "Caprice", "production_year" : 1990, "budget" : 11776 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235d"), "id" : 8, "movie_name" : "Beginning of the End", "production_year" : 2017, "budget" : 11860 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235e"), "id" : 9, "movie_name" : "Star Wars: Episode VI - Return of the Jedi", "production_year" : 1998, "budget"
+: 15111 }
+{ "_id" : ObjectId("6227838a76308ddba9f6235f"), "id" : 10, "movie_name" : "White Frog", "production_year" : 1999, "budget" : 16046 }
+
+
+
+
+
+
+
+
