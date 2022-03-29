@@ -1,5 +1,5 @@
 {
-  "name": "mongodb_paginationemail",
+  "name": "pagination_and_mail",
   "version": "1.0.0",
   "description": "",
   "main": "nodemon src/server.js",
